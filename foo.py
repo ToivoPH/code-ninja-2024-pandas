@@ -82,11 +82,41 @@ df.query('sodium >= 100 & sugars > 10')
 #task 2
 """
 #output the kelloggs in ascending values
-print(df.sort_values (by='rating', ascending=False))
+print(df[df['mfr'] == 'K'].sort_values(by='rating'))
 """
 
 #task 3
+"""
 #Rank the Cereals made by General Mills (G) and Nabisco (N), according to the number of
 #calories (highest first) and then, by the amount of fat (lowest first).
+print(df[df['mfr'] == 'G'].sort_values(by='calories', ascending=True))
+print(df[df['mfr'] == 'N'].sort_values(by='fat', ascending=False))
+"""
 
-#pandas concat
+#task 4
+"""
+df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
+df2 = pd.DataFrame({'A': [5, 6], 'B': [7, 8]})
+
+result = pd.concat([df1, df2], axis=0)  
+#concatenate along rows (axis=0)
+print(result)
+
+#output multiple columns
+print (kelloggs.sort_values(by=['fiber', 'sodium'], ascending=[False, True]))
+"""
+
+#task 5
+#print the calories in order then those calories ratings in order
+"""
+from pathlib import Path
+
+print('hello')
+filepath = Path('/workspaces/code-ninja-2024-pandas')
+for i in filepath.glob('cereal'):
+    print(i)
+print(df.sort_values(by=['calories', 'rating'], ascending=[False, False]))
+"""
+
+
+#there are 12 tasks so far
