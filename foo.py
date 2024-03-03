@@ -6,7 +6,7 @@ print('hello')
 df = pd.read_csv("cereal.csv")
 #print(df.head)
 
-#task 1
+#task 1 paper 1
 """
 print(df.info())
 """
@@ -69,3 +69,24 @@ print(df.iloc[25], df.iloc[31])
 print(df.iloc[6:16, 4:7])
 #[rows, cols]
 """
+
+#task 1 paper 2
+"""
+#to get the rating of the cerial AND the manufacturer
+df[(df.rating >= 50) & (df.mfr == 'K')]
+df.loc[(df['mfr']=='K') & (df['fiber']<2)]
+#make a query to get the levels of ingredients
+df.query('sodium >= 100 & sugars > 10')
+"""
+
+#task 2
+"""
+#output the kelloggs in ascending values
+print(df.sort_values (by='rating', ascending=False))
+"""
+
+#task 3
+#Rank the Cereals made by General Mills (G) and Nabisco (N), according to the number of
+#calories (highest first) and then, by the amount of fat (lowest first).
+
+#pandas concat
